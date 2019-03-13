@@ -1,0 +1,172 @@
+.mainContainer {
+  margin-top: 10px;
+  height: 100%;
+  font-family: Roboto, Helvetica, sans-serif;
+  border: 0.1px solid lightsteelblue;
+  padding: 50px 30px;
+}
+.mainContainer .divTitle {
+  margin: 10px 50px;
+}
+.mainContainer .divTitle .appTitle {
+  font-weight: normal;
+  line-height: 1.36;
+  text-align: left;
+  color: #005175;
+}
+.mainContainer .divTitle .titleHr {
+  height: 1px;
+  background-color: #cacaca;
+  text-align: left;
+}
+.mainContainer .form {
+  margin-top: 25px;
+  margin-left: 70px;
+  padding: 34px 40px;
+  width: 50%;
+  text-align: left;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+}
+.mainContainer .form .formTitle {
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #3e3d3f;
+}
+.mainContainer .form .formLine {
+  margin-top: 10.5px;
+  margin-bottom: 35.5px;
+  width: 100%;
+  height: 1px;
+  background-color: #cbcbcb;
+}
+.mainContainer .form .formContainer {
+  height: 100%;
+  background-color: #ffffff;
+}
+.mainContainer .form .formContainer .inputFullContainer {
+  width: 100%;
+  margin-bottom: 13px;
+}
+.mainContainer .form .formContainer .inputFullContainer .formLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.21;
+  letter-spacing: 0.2px;
+  text-align: left;
+  color: #3e3d3f;
+}
+.mainContainer .form .formContainer .inputFullContainer .formInput {
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px gray;
+  background-color: #ffffff;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 25px;
+  font-size: 16px;
+}
+.mainContainer .form .formContainer .inputFullContainer .rangeInput {
+  display: inline-block;
+  padding: 19px 22px 13px 22px;
+  width: 8%;
+  margin-left: 0px;
+}
+.mainContainer .form .formContainer .inputFullContainer .slidecontainer {
+  width: 80%;
+  display: inline-block;
+  margin-top: 17px;
+}
+.mainContainer .form .formContainer .inputFullContainer .slidecontainer .minRange, .mainContainer .form .formContainer .inputFullContainer .slidecontainer .maxRange {
+  width: 10%;
+}
+.mainContainer .form .formContainer .inputFullContainer .slidecontainer .slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.mainContainer .form .formContainer .inputFullContainer .slidecontainer .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 1px 2px 0 var(--black-27);
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mainContainer .form .formContainer .inputFullContainer .slidecontainer .slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 1px 2px 0 var(--black-27);
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mainContainer .form .formContainer .inputFullContainer .slidecontainer .slider:hover {
+  opacity: 1;
+  /* Fully shown on mouse-over */
+}
+.mainContainer .form .formContainer .inputFullContainer .inputHalfContainer {
+  width: 45%;
+  display: inline-block;
+  margin-bottom: 13px;
+}
+.mainContainer .form .formContainer .inputFullContainer .inputHalfContainer .halfValue {
+  margin-right: 8%;
+}
+.mainContainer .form .formContainer #calculateButton {
+  width: 100%;
+  height: 45px;
+  border-radius: 4px;
+  border-color: transparent;
+  background-color: #0077c0;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #ffffff;
+}
+.mainContainer .resultsContainer {
+  width: 25%;
+  display: inline-block;
+  background-color: #eaf6fa;
+  padding: 35px 40px;
+}
+.mainContainer .resultsContainer .resultsTitle {
+  font-weight: inherit;
+  font-size: 22px;
+  line-height: 1.36;
+  letter-spacing: normal;
+}
+.mainContainer .resultsContainer .smallLabel {
+  font-size: 14px;
+}
+.mainContainer .resultsContainer .resultValue {
+  font-size: 18px;
+}
+.mainContainer .resultsContainer .emptyValue {
+  margin-top: 0px;
+  color: #a1a1a1;
+}
+.mainContainer .resultsContainer .totalLabel {
+  font-size: 22px;
+}
+
+/*# sourceMappingURL=style.css.map */
