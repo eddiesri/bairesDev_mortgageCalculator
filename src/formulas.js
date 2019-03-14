@@ -129,20 +129,20 @@ function initialValues() {
         // checks if the form is valid
         if (validateForm(document.querySelectorAll('.required'))) {
             // Set the values into variables
-            let yearsOfMortgage       = yearsOfMortgageElement.value;
-            let interestRate          = interestRateElement.value;
-            let loanAmount            = loanAmountElement.value;
-            let annualTax             = annualTaxElement.value;
-            let annualInsurance       = annualInsuranceElement.value;
+            let yearsOfMortgage = yearsOfMortgageElement.value;
+            let interestRate = interestRateElement.value;
+            let loanAmount = loanAmountElement.value;
+            let annualTax = annualTaxElement.value;
+            let annualInsurance = annualInsuranceElement.value;
             let principleAndInterests = ((interestRate / 100) / 12) * loanAmount / (1 - Math.pow((1 + ((interestRate / 100) / 12)), -yearsOfMortgage * 12));
-            let tax                   = annualTax / 12;
-            let insurance             = annualInsurance / 12;
-            let monthlyPayment        = principleAndInterests + tax + insurance;
+            let tax = annualTax / 12;
+            let insurance = annualInsurance / 12;
+            let monthlyPayment = principleAndInterests + tax + insurance;
             // assign the result as text
             principleAndInterestsLabelElement.innerText = principleAndInterests.toFixed(2);
-            taxLabelElement.innerText                   = tax.toFixed(2);
-            insuranceLabelElement.innerText             = insurance.toFixed(2);
-            monthlyPaymentLabelElement.innerText        = monthlyPayment.toFixed(2);
+            taxLabelElement.innerText = tax.toFixed(2);
+            insuranceLabelElement.innerText = insurance.toFixed(2);
+            monthlyPaymentLabelElement.innerText = monthlyPayment.toFixed(2);
             // change the label for the submit button
             calculateButtonElement.innerText = "RECALCULATE";
             // removes the default color for empty results labels
