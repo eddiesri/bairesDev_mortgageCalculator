@@ -1,4 +1,13 @@
-
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(20px);
+    }
+}
 #resultsContainer {
     vertical-align: top;
     margin-top: 45px;
@@ -7,7 +16,7 @@
     display: inline-block;
     background-color: #eaf6fa;
     padding: 35px 40px;
-
+    animation: slide-down 2s ease;
     .resultsTitle {
         font-weight: inherit;
         margin-bottom: 10px;

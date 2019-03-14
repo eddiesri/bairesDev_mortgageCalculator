@@ -190,6 +190,16 @@
     display: none;
   }
 }
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+}
 .mainContainer #resultsContainer {
   vertical-align: top;
   margin-top: 45px;
@@ -198,6 +208,7 @@
   display: inline-block;
   background-color: #eaf6fa;
   padding: 35px 40px;
+  animation: slide-down 2s ease;
 }
 .mainContainer #resultsContainer .resultsTitle {
   font-weight: inherit;
