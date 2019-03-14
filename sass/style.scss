@@ -1,13 +1,20 @@
+$break-small: 760px;
+
 .mainContainer {
     margin-top: 10px;
     height: 100%;
     font-family: Roboto, Helvetica, sans-serif;
     border: 0.1px solid lightsteelblue;
     padding: 50px 30px;
-
+    
     @import "title";
 
     @import "form";
 
     @import "results";
+    @media screen and (max-width: $break-small) {
+        #resultsContainer.mobileElement {
+            display : block;
+        }
+    }
 }

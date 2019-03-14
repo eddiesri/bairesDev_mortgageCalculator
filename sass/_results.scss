@@ -1,9 +1,13 @@
-.resultsContainer {
+
+#resultsContainer {
+    vertical-align: top;
+    margin-top: 45px;
     width: 20%;
     height: 100%;
     display: inline-block;
     background-color: #eaf6fa;
     padding: 35px 40px;
+
     .resultsTitle {
         font-weight: inherit;
         margin-bottom: 10px;
@@ -43,6 +47,7 @@
         font-size: 18px;
         margin-top: 0px;
         margin-bottom: 0px;
+        width: 100%;
     }
     .totalValue{
         font-size: 22px;
@@ -54,8 +59,53 @@
             content:  " $ ";
         }
     }
-    hr{
+    .resultLine{
         margin-top: 20px;
         margin-bottom: 20px;
+        width: 100%;
+        height: 1px;
+        background-color: #cbcbcb;
+
     }
+    .mobileShown{
+        display: none;
+    }
+
+    @media screen and (max-width: $break-small) {
+        width: 80%;
+        margin: 0px 10px;
+        display: none;
+        .resultLine,.mobileShown{
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            height: 1px;
+        }
+        .resultDiv{
+            width:100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            p{
+                font-weight: normal;
+                font-size:14px;
+                display: inline-block;
+                margin: 0px;
+                width:58%;
+            }
+            .resultValue{
+                width:40%;                
+                text-align: right;
+            }
+            .totalValue{
+                font-size: 21px;
+                font-weight: bold;
+                display: inline-block;
+                width:40%;                
+                text-align: right;
+            }
+        }
+    
+  }
 }
+
+

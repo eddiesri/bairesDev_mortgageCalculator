@@ -1,0 +1,27 @@
+.slider {
+  height: 11px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: linear-gradient(to right, #1091cc 0%, #1091cc 50%, #d8d8d8 50%, #d8d8d8 100%);
+  border-radius: 6px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000031;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    
+  }
+}

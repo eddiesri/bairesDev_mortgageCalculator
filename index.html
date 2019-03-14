@@ -14,71 +14,97 @@
             <h2 class="appTitle">Mortgage Calculator</h2>
             <div class="titleHr"></div>
         </div>
-        <div class="form">
-            <label class="formTitle">Change values to calculate your results</label>
-            <div class="formLine"></div>
-            <form id="formContainer">
-                <div class="inputFullContainer">
-                    <label class="formLabel">Years of mortgage</label>
+        <div class="divContent">
+            <div class="form">
+                <label class="formTitle">Change values to calculate your results</label>
+                <div class="formLine"></div>
+                <form id="formContainer">
+                    <div class="inputFullContainer">
+                        <label class="formLabel">Years of mortgage</label>
 
-                    <div class="slidecontainer">
-                        <span class="minRange">1</span>
-                        <input type="range" min="1" max="40" value="20" class="slider" id="yearsRangeValue">
-                        <span class="maxRange">40</span>
+                        <div class="slidecontainer">
+
+                            <div class="rangeLabel"><span class="minRange">1</span></div>
+                            <div class="rangeSlider"><input type="range" min="1" max="40" value="20" step="1" class="slider"
+                                    id="yearsRangeValue"></div>
+                            <div class="rangeLabel"><span class="maxRange">40</span></div>
+                            <div class="rangeInput"><input type="number" min="1" max="40" value="20" step="1" id="yearsValue"
+                                    disabled="true"></div>
+
+                        </div>
+
+
                     </div>
+                    <div class="inputFullContainer">
+                        <label class="formLabel">Rate of interest (%)</label>
 
-                    <input type="number" class=" rangeInput" min="1" max="40" value="20" step="1" id="yearsValue" disabled="true">
-                </div>
-                <div class="inputFullContainer">
-                    <label class="formLabel">Rate of interest (%)</label>
+                        <div class="slidecontainer">
+                            <div class="rangeLabel"><span class="minRange">0.1</span></div>
+                            <div class="rangeSlider"><input type="range" min="0.1" max="10" step="0.1" value="5" class="slider"
+                                    id="interestRangeValue"></div>
+                            <div class="rangeLabel"><span class="maxRange">10</span></div>
+                            <div class="rangeInput"><input type="number" min="0.1" max="10" step="0.1" value="5" id="interestValue"
+                                    disabled="true"></div>
 
-                    <div class="slidecontainer">
-                        <span class="minRange">0.1</span>
-                        <input type="range" min="0.1" max="10" step="0.1" value="5" class="slider" id="interestRangeValue">
-                        <span class="maxRange">10</span>
+
+                        </div>
+
+
+
                     </div>
-
-
-                    <input type="number" class=" rangeInput" min="0.1" max="10" value="5" step="0.1" id="interestValue"  disabled="true">
-                </div>
-                <div class="inputFullContainer">
-                    <label class="formLabel">Loan Amount</label>
-                    <input type="number" min="0" step="1" class="formInput required" id="loanValue" >
-                    <label class="invalidMessage">Loan Amount is mandatory</label>    
-                </div>
-                <div class="inputFullContainer">
-                    <div class="inputHalfContainer halfValue">
-                        <label class="formLabel">Annual Tax</label>
-                        <input type="number" min="0" step="1" class="formInput required" id="taxValue" >
-                        <label class="invalidMessage">Loan Amount is mandatory</label>    
+                    <div class="inputFullContainer">
+                        <label class="formLabel">Loan Amount</label>
+                        <div class="currencyContainer">
+                                <label>$</label>  <input type="number" min="0" step="1" class="required" id="loanValue">
+                        </div>
+                        
+                        <label class="invalidMessage">Loan Amount is mandatory</label>
                     </div>
-                    <div class="inputHalfContainer">
-                        <label class="formLabel">Annual Insurance</label>
-                        <input type="number" min="0" step="1" class="formInput required" id="insuranceValue" >
-                        <label class="invalidMessage">Loan Amount is mandatory</label>    
+                    <div class="inputFullContainer">
+                        <div class="inputHalfContainer inputHalfContainerLeft">
+                            <label class="formLabel">Annual Tax</label>
+
+                            <div class="currencyContainer ">
+                                <label>$</label> <input type="number" min="0" step="1" class="required" id="taxValue">
+                            </div>
+                            <label class="invalidMessage">Loan Amount is mandatory</label>
+                        </div>
+                        <div class="inputHalfContainer ">
+                            <label class="formLabel">Annual Insurance</label>
+                            <div class="currencyContainer">
+
+                                    <label>$</label> <input type="number" min="0" step="1" class="required" id="insuranceValue">
+                            </div>
+                            <label class="invalidMessage">Loan Amount is mandatory</label>
+                        </div>
                     </div>
+                    <div class="calculateContainer">
+                        <button type="submit" id="calculateButton">CALCULATE</button>
+                    </div>
+                </form>
+            </div>
+            <div id="resultsContainer">
+                <h3 class="resultsTitle">Your Results</h3>
+                <div class="resultDiv">
+                    <p class="smallLabel">Principle &amp; Interest</p>
+                    <p class="resultValue emptyValue" id="principleAndInterestsLabel"> - - </p>
                 </div>
-                <div class="calculateContainer">
-                    <button type="submit" id="calculateButton">CALCULATE</button>
+                <div class="resultLine mobileShown"></div>
+                <div class="resultDiv">
+                    <p class="smallLabel">Tax</p>
+                    <p class="resultValue emptyValue" id="taxLabel"> - - </p>
                 </div>
-
-
-
-            </form>
-        </div>
-        <div class="resultsContainer">
-            <h3 class="resultsTitle">Your Results</h3>
-
-            <p class="smallLabel">Principle &amp; Interest</p>
-            <p class="resultValue emptyValue" id="principleAndInterestsLabel"> - - </p>
-            <p class="smallLabel">Tax</p>
-            <p class="resultValue emptyValue" id="taxLabel"> - - </p>
-            <p class="smallLabel">Insurance</p>
-            <p class="resultValue emptyValue" id="insuranceLabel"> - - </p>
-            <hr>
-            <p class="totalLabel">Total Monthly Payment</p>
-            <p class="totalValue emptyValue" id="monthlyPaymentLabel"> - -</p>
-
+                <div class="resultLine mobileShown"></div>
+                <div class="resultDiv">
+                    <p class="smallLabel">Insurance</p>
+                    <p class="resultValue emptyValue" id="insuranceLabel"> - - </p>
+                </div>
+                <div class="resultLine"></div>
+                <div class="resultDiv">
+                    <p class="totalLabel">Total Monthly Payment</p>
+                    <p class="totalValue emptyValue" id="monthlyPaymentLabel"> - -</p>
+                </div>
+            </div>
         </div>
 
 

@@ -23,10 +23,11 @@
   margin-top: 25px;
   margin-left: 70px;
   padding: 34px 40px;
-  width: 50%;
+  width: 45%;
   border-radius: 4px;
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
   display: inline-block;
+  /* Mobile Styles*/
 }
 .mainContainer .form .formTitle {
   font-size: 16px;
@@ -59,23 +60,10 @@
   letter-spacing: 0.2px;
   text-align: left;
   color: #3e3d3f;
-}
-.mainContainer .form #formContainer .inputFullContainer .invalidLabel {
-  color: #da3535;
-}
-.mainContainer .form #formContainer .inputFullContainer .formInput {
-  width: 90%;
-  border-radius: 4px;
-  border: solid 1px gray;
-  background-color: #ffffff;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 25px;
-  text-align: left;
-  font-size: 16px;
+  margin-bottom: 6px;
 }
 .mainContainer .form #formContainer .inputFullContainer .invalidInput {
-  border: solid 1px #da3535;
+  border: solid 1px #da3535 !important;
 }
 .mainContainer .form #formContainer .inputFullContainer .invalidMessage {
   font-size: 12px;
@@ -91,59 +79,92 @@
 .mainContainer .form #formContainer .inputFullContainer .displayInvalid {
   display: block;
 }
-.mainContainer .form #formContainer .inputFullContainer .rangeInput {
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer {
+  width: 100%;
+  margin: 0px;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeLabel {
+  width: 8%;
+  text-align: center;
   display: inline-block;
-  padding: 19px 22px;
+  margin: 0px;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeSlider {
+  width: 60%;
+  display: inline-block;
+  margin: 0px;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeSlider .slider {
+  height: 11px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: linear-gradient(to right, #1091cc 0%, #1091cc 50%, #d8d8d8 50%, #d8d8d8 100%);
+  border-radius: 6px;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeSlider .slider:focus {
+  outline: none;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeSlider .slider:hover {
+  opacity: 1;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeSlider .slider::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000031;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeInput {
+  display: inline-block;
+  width: 19.23%;
+  margin: 0px;
+}
+.mainContainer .form #formContainer .inputFullContainer .slidecontainer .rangeInput input {
+  padding: 20px 0px;
+  width: 100%;
   text-align: center;
   border-radius: 4px;
   border: solid 1px gray;
   background-color: #ffffff;
   font-size: 16px;
-  width: 5%;
-  margin: 0px;
-}
-.mainContainer .form #formContainer .inputFullContainer .slidecontainer {
-  width: 85%;
-  display: inline-block;
-  margin-top: 17px;
-  margin-left: 0px;
-}
-.mainContainer .form #formContainer .inputFullContainer .slidecontainer .minRange, .mainContainer .form #formContainer .inputFullContainer .slidecontainer .maxRange {
-  width: 10%;
-  text-align: center;
-  padding-left: 2%;
-  padding-right: 2%;
-}
-.mainContainer .form #formContainer .inputFullContainer .slidecontainer .slider {
-  -webkit-appearance: none;
-  width: 80%;
-  height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-}
-.mainContainer .form #formContainer .inputFullContainer .slidecontainer .slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 24px;
-  height: 24px;
-  box-shadow: 0 1px 2px 0 var(--black-27);
-  background-color: #ffffff;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.mainContainer .form #formContainer .inputFullContainer .slidecontainer .slider:hover {
-  opacity: 1;
 }
 .mainContainer .form #formContainer .inputFullContainer .inputHalfContainer {
   width: 45%;
   display: inline-block;
+  vertical-align: top;
   margin-bottom: 13px;
-  margin-right: 4%;
   margin-top: 5px;
+}
+.mainContainer .form #formContainer .inputFullContainer .currencyContainer {
+  width: 90%;
+  padding: 5px 5px 5px 25px;
+  display: inline-block;
+  border: solid 1px gray;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+.mainContainer .form #formContainer .inputFullContainer .currencyContainer label {
+  width: 5%;
+  text-align: left;
+  font-size: 16px;
+  display: inline-block;
+  border: 0;
+}
+.mainContainer .form #formContainer .inputFullContainer .currencyContainer input {
+  display: inline-block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  letter-spacing: 1.67px;
+  border: 0;
+  width: 90%;
+  text-align: left;
+  font-size: 16px;
+}
+.mainContainer .form #formContainer .inputFullContainer .inputHalfContainerLeft {
+  margin-right: 15px;
 }
 .mainContainer .form #formContainer #calculateButton {
   width: 100%;
@@ -160,57 +181,116 @@
   text-align: center;
   color: #ffffff;
 }
-.mainContainer .resultsContainer {
+@media screen and (max-width: 760px) {
+  .mainContainer .form {
+    width: 80%;
+    margin: 0px 10px;
+  }
+  .mainContainer .form .mobileHidden {
+    display: none;
+  }
+}
+.mainContainer #resultsContainer {
+  vertical-align: top;
+  margin-top: 45px;
   width: 20%;
   height: 100%;
   display: inline-block;
   background-color: #eaf6fa;
   padding: 35px 40px;
 }
-.mainContainer .resultsContainer .resultsTitle {
+.mainContainer #resultsContainer .resultsTitle {
   font-weight: inherit;
   margin-bottom: 10px;
   font-size: 22px;
   line-height: 1.36;
   letter-spacing: normal;
 }
-.mainContainer .resultsContainer .smallLabel {
+.mainContainer #resultsContainer .smallLabel {
   font-size: 14px;
   margin-top: 30px;
   margin-bottom: 0px;
   line-height: 2.14;
 }
-.mainContainer .resultsContainer .resultValue {
+.mainContainer #resultsContainer .resultValue {
   font-size: 18px;
   margin-bottom: 0px;
   margin-top: 0px;
   font-weight: bold;
   line-height: 1.67;
 }
-.mainContainer .resultsContainer .resultValue::before {
+.mainContainer #resultsContainer .resultValue::before {
   content: " $ ";
 }
-.mainContainer .resultsContainer .emptyValue {
+.mainContainer #resultsContainer .emptyValue {
   color: #a1a1a1;
 }
-.mainContainer .resultsContainer .totalLabel {
+.mainContainer #resultsContainer .totalLabel {
   font-size: 18px;
   margin-top: 0px;
   margin-bottom: 0px;
+  width: 100%;
 }
-.mainContainer .resultsContainer .totalValue {
+.mainContainer #resultsContainer .totalValue {
   font-size: 22px;
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: bold;
   line-height: 1.67;
 }
-.mainContainer .resultsContainer .totalValue::before {
+.mainContainer #resultsContainer .totalValue::before {
   content: " $ ";
 }
-.mainContainer .resultsContainer hr {
+.mainContainer #resultsContainer .resultLine {
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
+  height: 1px;
+  background-color: #cbcbcb;
+}
+.mainContainer #resultsContainer .mobileShown {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .mainContainer #resultsContainer {
+    width: 80%;
+    margin: 0px 10px;
+    display: none;
+  }
+  .mainContainer #resultsContainer .resultLine, .mainContainer #resultsContainer .mobileShown {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 1px;
+  }
+  .mainContainer #resultsContainer .resultDiv {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .mainContainer #resultsContainer .resultDiv p {
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0px;
+    width: 58%;
+  }
+  .mainContainer #resultsContainer .resultDiv .resultValue {
+    width: 40%;
+    text-align: right;
+  }
+  .mainContainer #resultsContainer .resultDiv .totalValue {
+    font-size: 21px;
+    font-weight: bold;
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+  }
+}
+@media screen and (max-width: 760px) {
+  .mainContainer #resultsContainer.mobileElement {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
