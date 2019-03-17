@@ -15,6 +15,7 @@
             letter-spacing: 0.2px;
             text-align: left;
             color: #3e3d3f;
+            padding-bottom:3px;
         }
 
 
@@ -61,21 +62,32 @@
         }
 
         .invalidMessage{
-            font-size: 12px;
+            margin-top:2px;
+            font-size: 10px;
             font-weight: bold;
             font-style: normal;
             font-stretch: normal;
             line-height: normal;
-            letter-spacing: 0.3px;
-            text-align: left;
+            letter-spacing: 0.2px;
+            height: 10px;
             color: #da3535;
             display : none;
+        }
+
+        .invalidInput{
+            border-color: #da3535 !important;
+        }
+
+        .invalidDesktopMessage{
+            display : none;
+
         }
         .displayInvalid{
             display : block;
         }
 
         .splitedColumns{
+            padding-top: 7px;
             display:grid;
             width: 100%;
             grid-template-columns: 1fr 1fr;
@@ -86,26 +98,39 @@
         .currencyContainer {
             border: solid 1px #a6a6a6;
             border-radius: 4px;
-            padding: 12px 15px;
+            padding: 0 5px 0 15px;
+        
             display: grid;
             grid-template-columns: 10px 1fr;
-            column-gap: 5px;
+            column-gap: 1px;
             input {
                 width: 100%;
                 border: 0;
-                font-size: 14px;
+                height: 40px;
+                padding: 12px 0px;
                 font-weight: normal;
                 font-style: normal;
                 font-stretch: normal;
-                line-height: 0;
+                line-height: normal;
                 padding:0;
-                letter-spacing: 0.3px;
+                letter-spacing: 0.4px;
                 color: #0d0d0d;
-
+                &:focus{
+                    outline: none;
+                }
             }
             &:before{
                 content:'$';
+                padding-top: 12px;
+                font-size: 14px;
             }
+
+        }
+        .active{
+            border-radius: 4px;
+            box-shadow: 0 0 4px 0 rgba(62, 61, 63, 0.62);
+            border: solid 1px #3e3d3f;
+            background-color: #ffffff;
         }
 
 

@@ -59,8 +59,8 @@
                         <div class="currencyContainer">
                             <input type="number" min="0" step="1" class="required" id="loanValue">
                         </div>
-                        
-                        <label class="invalidMessage">Loan Amount is mandatory</label>
+                        <label class="invalidMessage">Mandatory Field</label>
+                        <label class="invalidDesktopMessage">Loan Amount is mandatory</label>
                     </div>
                     <div class="">
 <div class="splitedColumns">
@@ -70,7 +70,8 @@
                             <div class="currencyContainer ">
                               <input type="number" min="0" step="1" class="required" id="taxValue">
                             </div>
-                            <label class="invalidMessage">Loan Amount is mandatory</label>
+                            <label class="invalidMessage">Mandatory Field</label>
+                            <label class="invalidDesktopMessage">Mandatory Field</label>
                         </div>
                         <div class="halfColumn">
                             <div class=""></div>
@@ -80,7 +81,8 @@
 
                                  <input type="number" min="0" step="1" class="required" id="insuranceValue">
                             </div>
-                            <label class="invalidMessage">Loan Amount is mandatory</label>
+                            <label class="invalidMessage">Mandatory Field</label>
+                            <label class="invalidDesktopMessage">Loan Amount is mandatory</label>
                         </div>
                     </div>
                     </div>
@@ -89,28 +91,28 @@
                     </div>
                 </form>
             </div>
-            <!-- <div id="resultsContainer">
+            <div id="resultsContainer" class="hidden">
                 <h3 class="resultsTitle">Your Results</h3>
                 <div class="resultDiv">
-                    <p class="smallLabel">Principle &amp; Interest</p>
+                    <p class="valueLabel smallLabel">Principle &amp; Interest</p>
                     <p class="resultValue emptyValue" id="principleAndInterestsLabel"> - - </p>
                 </div>
-                <div class="resultLine mobileShown"></div>
+                <div class="resultLine"></div>
                 <div class="resultDiv">
-                    <p class="smallLabel">Tax</p>
+                    <p class="valueLabel smallLabel">Tax</p>
                     <p class="resultValue emptyValue" id="taxLabel"> - - </p>
                 </div>
-                <div class="resultLine mobileShown"></div>
+                <div class="resultLine "></div>
                 <div class="resultDiv">
-                    <p class="smallLabel">Insurance</p>
+                    <p class="valueLabel smallLabel">Insurance</p>
                     <p class="resultValue emptyValue" id="insuranceLabel"> - - </p>
                 </div>
                 <div class="resultLine"></div>
                 <div class="resultDiv">
-                    <p class="totalLabel">Total Monthly Payment</p>
+                    <p class="valueLabel totalLabel">Total Monthly Payment</p>
                     <p class="totalValue emptyValue" id="monthlyPaymentLabel"> - -</p>
                 </div>
-            </div> -->
+            </div>
         </div> 
 
 

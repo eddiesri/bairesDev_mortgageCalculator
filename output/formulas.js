@@ -115,7 +115,14 @@ function listenerChangeRequiredClass(element) {
 
 function listenerClickCurrencyContainerClass(element) {
   element.addEventListener("click", function (e) {
+    var pastActive = document.querySelector('.active');
+
+    if (pastActive) {
+      pastActive.classList.remove('active');
+    }
+
     element.lastElementChild.focus();
+    element.classList.add('active');
   });
 }
 /**
@@ -125,7 +132,7 @@ function listenerClickCurrencyContainerClass(element) {
 
 function initialValues() {
   yearsOfMortgageElement.value = 30;
-  interestRateElement.value = 8;
+  interestRateElement.value = 8.0;
   loanAmountElement.value = 100000;
   annualTaxElement.value = 1000;
   annualInsuranceElement.value = 300;
@@ -161,7 +168,8 @@ function initialValues() {
 
       removeEmptyValueClass(); // show the results for mobile web
 
-      resultsContainerElement.classList.add("mobileElement");
+      resultsContainerElement.classList.remove("hidden");
+      resultsContainerElement.scrollIntoView();
     }
   }); // Add events listeners for every slider input
 

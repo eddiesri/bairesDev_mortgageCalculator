@@ -1,4 +1,4 @@
-$break-small: 760px;
+$break-small: 700px;
 body{
     
     font-family: Roboto, Helvetica, sans-serif;
@@ -8,19 +8,21 @@ body{
     color: #3e3d3f;
 }
 .mainContainer {
-    // border: 0.1px solid lightsteelblue;
     margin: 10px;
     display: grid;
     padding-bottom: 20px;
-    // grid-template-rows: 20% 80%;
-    @import "title"; //OK
 
+    @import "title"; //OK
+    
     @import "form"; 
 
     @import "results";
-    @media screen and (max-width: $break-small) {
-        #resultsContainer.mobileElement {
-            display : block;
+   
+        @media screen and (min-width: $break-small) {
+            .divContent {
+            display: grid;
+            grid-template-columns: 53.4% 30.91%;
+            padding: 0 8.86% 0 6.81%;
         }
     }
 }

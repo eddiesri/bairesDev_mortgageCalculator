@@ -100,10 +100,15 @@ function listenerChangeRequiredClass(element) {
  * Adds a onClick listener to the '.currencyContainer' element
  * Also: focus the inner input
  * @param {Object} element - The element whose listener will be set
- */
+ */ 
 function listenerClickCurrencyContainerClass(element) {
     element.addEventListener("click", function (e) {
-        element.lastElementChild.focus()
+        let pastActive = document.querySelector('.active');
+        if(pastActive){
+            pastActive.classList.remove('active');
+        }
+        element.lastElementChild.focus();
+        element.classList.add('active');
     })
 }
 
@@ -112,7 +117,7 @@ function listenerClickCurrencyContainerClass(element) {
  */
 function initialValues() {
     yearsOfMortgageElement.value = 30;
-    interestRateElement.value = 8;
+    interestRateElement.value = 8.0;
     loanAmountElement.value = 100000;
     annualTaxElement.value = 1000;
     annualInsuranceElement.value = 300;
@@ -148,7 +153,8 @@ function initialValues() {
             // removes the default color for empty results labels
             removeEmptyValueClass();
             // show the results for mobile web
-            resultsContainerElement.classList.add("mobileElement");
+            resultsContainerElement.classList.remove("hidden");
+            resultsContainerElement.scrollIntoView();
         }
     });
 
