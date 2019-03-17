@@ -25,7 +25,7 @@ function rangeSet(element) {
 
   inputElement.value = element.value; // fills the range background
 
-  element.style.background = 'linear-gradient(to right, #1091cc 0%, #1091cc ' + percentage + '%, #d8d8d8 ' + percentage + '%, #d8d8d8 100%)';
+  element.style.background = 'linear-gradient(to right, #1091cc 0%, #1091cc ' + percentage + '%, #cacaca ' + percentage + '%, #cacaca 100%)';
 }
 /**
  * Removes the element 'invalidInput' class

@@ -11,7 +11,7 @@
 <body>
     <div class="mainContainer">
         <div class="divTitle">
-            <h2 class="appTitle">Mortgage Calculator</h2>
+            <label class="appTitle">Mortgage Calculator</h2>
             <div class="titleHr"></div>
         </div>
         <div class="divContent">
@@ -19,15 +19,17 @@
                 <label class="formTitle">Change values to calculate your results</label>
                 <div class="formLine"></div>
                 <form id="formContainer">
-                    <div class="inputFullContainer">
+                    <div class="inputContainer">
                         <label class="formLabel">Years of mortgage</label>
-
+                        
                         <div class="slidecontainer">
 
                             <div class="rangeLabel"><span class="minRange">1</span></div>
                             <div class="rangeSlider"><input type="range" min="1" max="40" value="20" step="1" class="slider"
-                                    id="yearsRangeValue"></div>
-                            <div class="rangeLabel"><span class="maxRange">40</span></div>
+                                id="yearsRangeValue"></div>
+                            
+                                    <div class="rangeLabel"><span class="maxRange">40</span></div>
+                            
                             <div class="rangeInput"><input type="number" min="1" max="40" value="20" step="1" id="yearsValue"
                                     disabled="true"></div>
 
@@ -35,7 +37,7 @@
 
 
                     </div>
-                    <div class="inputFullContainer">
+                    <div class="inputContainer">
                         <label class="formLabel">Rate of interest (%)</label>
 
                         <div class="slidecontainer">
@@ -52,38 +54,42 @@
 
 
                     </div>
-                    <div class="inputFullContainer">
+                    <div class="inputContainer">
                         <label class="formLabel">Loan Amount</label>
                         <div class="currencyContainer">
-                                <label>$</label>  <input type="number" min="0" step="1" class="required" id="loanValue">
+                            <input type="number" min="0" step="1" class="required" id="loanValue">
                         </div>
                         
                         <label class="invalidMessage">Loan Amount is mandatory</label>
                     </div>
-                    <div class="inputFullContainer">
-                        <div class="inputHalfContainer inputHalfContainerLeft">
+                    <div class="">
+<div class="splitedColumns">
+                        <div class="halfColumn">
                             <label class="formLabel">Annual Tax</label>
 
                             <div class="currencyContainer ">
-                                <label>$</label> <input type="number" min="0" step="1" class="required" id="taxValue">
+                              <input type="number" min="0" step="1" class="required" id="taxValue">
                             </div>
                             <label class="invalidMessage">Loan Amount is mandatory</label>
                         </div>
-                        <div class="inputHalfContainer ">
+                        <div class="halfColumn">
+                            <div class=""></div>
+                            <div class=""></div>
                             <label class="formLabel">Annual Insurance</label>
                             <div class="currencyContainer">
 
-                                    <label>$</label> <input type="number" min="0" step="1" class="required" id="insuranceValue">
+                                 <input type="number" min="0" step="1" class="required" id="insuranceValue">
                             </div>
                             <label class="invalidMessage">Loan Amount is mandatory</label>
                         </div>
+                    </div>
                     </div>
                     <div class="calculateContainer">
                         <button type="submit" id="calculateButton">CALCULATE</button>
                     </div>
                 </form>
             </div>
-            <div id="resultsContainer">
+            <!-- <div id="resultsContainer">
                 <h3 class="resultsTitle">Your Results</h3>
                 <div class="resultDiv">
                     <p class="smallLabel">Principle &amp; Interest</p>
@@ -104,8 +110,8 @@
                     <p class="totalLabel">Total Monthly Payment</p>
                     <p class="totalValue emptyValue" id="monthlyPaymentLabel"> - -</p>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        </div> 
 
 
     </div>

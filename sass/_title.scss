@@ -1,16 +1,21 @@
 
 .divTitle {
-    margin: 10px 50px;
+    padding: 13px 10px 20px  10px;
 
     .appTitle {
-        font-weight: normal;
-        line-height: 1.36;
+        font-size: 20px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        
         text-align: left;
-        color: #005175;
+        color: #006ea0;
     }
 
     .titleHr {
-        height: 1px;
+        height: 0.5px;
+        margin-top: 10px;
+
         background-color: #cacaca;
         text-align: left;
     }

@@ -1,15 +1,21 @@
 $break-small: 760px;
-
-.mainContainer {
-    margin-top: 10px;
-    height: 100%;
-    font-family: Roboto, Helvetica, sans-serif;
-    border: 0.1px solid lightsteelblue;
-    padding: 50px 30px;
+body{
     
-    @import "title";
+    font-family: Roboto, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #3e3d3f;
+}
+.mainContainer {
+    // border: 0.1px solid lightsteelblue;
+    margin: 10px;
+    display: grid;
+    padding-bottom: 20px;
+    // grid-template-rows: 20% 80%;
+    @import "title"; //OK
 
-    @import "form";
+    @import "form"; 
 
     @import "results";
     @media screen and (max-width: $break-small) {

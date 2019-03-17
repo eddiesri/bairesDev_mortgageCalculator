@@ -1,25 +1,63 @@
 #formContainer {
-
-    height: 100%;
-
+    margin-top: 10px;
+    
     background-color: #ffffff;
-    .inputFullContainer {
-        width: 100%;
-        margin-bottom: 13px;
-        
+    display: grid;
+    row-gap:13px;
+ 
         .formLabel {
             display: block;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
-            line-height: 1.21;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.67;
             letter-spacing: 0.2px;
             text-align: left;
             color: #3e3d3f;
-            margin-bottom:6px
         }
 
-        .invalidInput{
-            border: solid 1px #da3535 !important ;
+
+        .slidecontainer {
+            margin: 0px;
+            width:100%;
+            display: grid;
+            grid-template-columns: 9.62% 60.77% 10.38% 19.23%;
+            height: 40px;
+            vertical-align: center;
+            font-size: 14px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 0.3px;
+            .rangeLabel {
+                padding-top:12px;
+                padding-right: 16%;
+            }
+
+            .rangeSlider {
+                padding:6px  2.78% 6px 0;
+                @import "slider";
+
+            }
+
+            .rangeInput {
+            
+
+                input {
+                    width: 100%;
+                    padding-top:12px;
+                    padding-bottom:12px;
+                    text-align: center;
+                    border-radius: 4px;
+                    border: solid 1px #a6a6a6;
+                    background-color: #ffffff;
+                }
+            }
+
+
+
         }
 
         .invalidMessage{
@@ -37,95 +75,51 @@
             display : block;
         }
 
-
-        .slidecontainer {
-            width:100%;
-            margin: 0px;
-            .rangeLabel {
-                width: 8%;
-                text-align: center;
-                display: inline-block;
-                margin: 0px;
-            }
-
-            .rangeSlider{
-                width: 60%;
-                display: inline-block;
-                margin: 0px;
-                @import "slider";
-
-            }
-            .rangeInput {
-                display: inline-block;
-                width: 19.23%;
-                margin: 0px;
-                input{
-                    padding: 20px 0px;
-                    width : 100%;
-                    text-align: center;
-                    border-radius: 4px;
-                    border: solid 1px gray;
-                    background-color: #ffffff;
-                    font-size: 16px;
-                }
-            }
-
-
+        .splitedColumns{
+            display:grid;
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 7.69%;
 
         }
 
-
-        .inputHalfContainer {
-            width: 45%;
-            display: inline-block;
-            vertical-align: top;
-            margin-bottom: 13px;
-            margin-top : 5px;
-
-        }
         .currencyContainer {
-            width: 90%;
-            padding: 5px 5px 5px 25px;
-            display: inline-block;
-            border: solid 1px gray;
+            border: solid 1px #a6a6a6;
             border-radius: 4px;
-            background-color: #ffffff;
-            label{
-                width: 5%;
-                text-align: left;
-                font-size: 16px; 
-                display: inline-block;
-                border: 0; 
-            }
+            padding: 12px 15px;
+            display: grid;
+            grid-template-columns: 10px 1fr;
+            column-gap: 5px;
             input {
-                display: inline-block;
-                padding-top: 8px;
-                padding-bottom: 8px;
-                letter-spacing: 1.67px;
+                width: 100%;
                 border: 0;
-                width: 90%;
-                text-align: left;
-                font-size: 16px;
+                font-size: 14px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 0;
+                padding:0;
+                letter-spacing: 0.3px;
+                color: #0d0d0d;
+
+            }
+            &:before{
+                content:'$';
             }
         }
 
-        .inputHalfContainerLeft{
-                margin-right: 15px;
-        }
-    }
 
     #calculateButton {
         width: 100%;
-        height: 45px;
+        height: 40px;
         border-radius: 4px;
         border-color: transparent;
         background-color: #0077c0;
-        font-size: 16px;
         font-weight: bold;
         font-style: normal;
         font-stretch: normal;
         line-height: normal;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.6px;
         text-align: center;
         color: #ffffff;
     }
