@@ -1,3 +1,5 @@
+
+// slide down effect
 @keyframes slide-down {
     0% {
         opacity: 0;
@@ -10,14 +12,18 @@
     }
 }
 
+
+// div container for results
 #resultsContainer {
     vertical-align: top;
     display: grid;
     row-gap: 15px;
     padding: 20px;
     background-color: #eaf6fa;
-    animation: slide-down  2s ease;
-    z-index:-1;
+    animation: slide-down 2s ease;
+    z-index: -1;
+
+    //results title
     .resultsTitle {
         font-size: 20px;
         font-weight: normal;
@@ -29,11 +35,12 @@
 
     }
 
+    // div containing each result line
     .resultDiv {
         display: grid;
         grid-template-columns: 50% 50%;
 
-        // grid-template-rows: 15px;
+        // result value label before the tax,interest and insurance
         .valueLabel {
             margin: 0px;
             font-size: 12px;
@@ -45,6 +52,7 @@
             text-align: left;
         }
 
+        //result value for tax,interest and insurance
         .resultValue {
             margin: 0px;
             font-size: 14px;
@@ -61,18 +69,20 @@
             }
         }
 
+        // total label before the value
         .totalLabel {
             margin: 4px 0px 3px 0px;
             width: 100%;
         }
 
+        // total monthly payment
         .totalValue {
             margin: 0px;
             height: 21px;
             font-size: 20px;
             font-weight: normal;
             text-align: right;
-
+            // insert '$' sign
             &::before {
                 content: " $ ";
                 font-size: 21px;
@@ -83,91 +93,111 @@
 
     }
 
-    .emptyValue {
 
+    // change the color when value its empty
+    .emptyValue {
         color: #a1a1a1;
     }
-    .resultLine {
 
+    //dividing line for the results
+    .resultLine {
         height: 1px;
         background-color: #cbcbcb;
-
     }
 
-    // .smallLabel {
-
-    //     font-size: 14px;
-    //     margin-top: 30px;
-    //     margin-bottom: 0px;
-    //     line-height: 2.14;  
-    // }
-
-
-
-
-    // .totalLabel {
-    //     font-size: 18px;
-    //     margin-top: 0px;
-    //     margin-bottom: 0px;
-    //     width: 100%;
-    // }
-    // .totalValue{
-    //     font-size: 22px;
-    //     margin-top: 0px;
-    //     margin-bottom: 0px;
-    //     font-weight: bold;
-    //     line-height: 1.67;
-    //     &::before {
-    //         content:  " $ ";
-    //     }
-    // }
-
-    // .mobileShown{
-    //     display: none;
-    // }
-
-    //     @media screen and (max-width: $break-small) {
-    //         width: 80%;
-    //         margin: 0px 10px;
-    //         display: none;
-    //         .resultLine,.mobileShown{
-    //             display: block;
-    //             margin-top: 0px;
-    //             margin-bottom: 0px;
-    //             height: 1px;
-    //         }
-    //         .resultDiv{
-    //             width:100%;
-    //             margin-top: 10px;
-    //             margin-bottom: 10px;
-    //             p{
-    //                 font-weight: normal;
-    //                 font-size:14px;
-    //                 display: inline-block;
-    //                 margin: 0px;
-    //                 width:58%;
-    //             }
-    //             .resultValue{
-    //                 width:40%;                
-    //                 text-align: right;
-    //             }
-    //             .totalValue{
-    //                 font-size: 21px;
-    //                 font-weight: bold;
-    //                 display: inline-block;
-    //                 width:40%;                
-    //                 text-align: right;
-    //             }
-    //         }
-
-    //   }
-    &.hidden{
-        display:none;
+    //dividing line for the total
+    .totalLine {
+        display:block;
     }
+
+    //when the container is hidden on mobile view
+    &.hidden {
+        display: none;
+    }
+
+
+    // defines the desktop view for the container
     @media screen and (min-width: $break-small) {
-        display: grid;
+        margin: 41px 0;
+        display:block;
+        padding :13.23% 14.7%;
         animation: none;
+
+        // changes minor sizes
+        .resultsTitle {
+            font-size: 20px;
+            margin-bottom: 29px;
+            padding:0px;
+        }
+
+        // there is no grid but block display
+        .resultDiv {
+            margin-bottom: 20px;
+            display:block;
+
+            // minor size changes for the labels
+            .valueLabel {
+                margin: 0px 0px ;
+                padding: 0px;
+                font-size: 14px;
+                line-height: 2.14;
+                letter-spacing: normal;
+              
+            }
+            // minor size changes for the results, aligned to left
+            .resultValue {
+                height: 100%;
+
+                margin: 0px;
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 1.67;
+                letter-spacing: normal;
+                text-align: left;    
+                &::before {
+                    font-weight: bold;
+                }
+            }
+            // minor size changes for the labels
+            .totalLabel {
+                margin: 0px;
+                font-size: 18px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.67;
+                letter-spacing: normal;
+            }
+            // minor size changes for the total, aligned to left
+            .totalValue {
+                font-size: 22px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.36;
+                letter-spacing: normal;
+                text-align: left;    
+                &::before {
+                    font-size: 22px;
+                }
+            }
+        }
+
+        // lines are not visible on desktop
+        .resultLine {
+            display: none;
+        }
+
+        // just the total line is visible on desktop
+        .totalLine{
+            display:block;
+            margin : 20px 0px;
+        }
+
+        // the result container is always visible on desktop
+        &.hidden {
+            display: block;
+        }
     }
 
 }
-

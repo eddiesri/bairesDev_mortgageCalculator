@@ -1,139 +1,153 @@
+// form container elemen, grid displayed
 #formContainer {
     margin-top: 10px;
-    
-    background-color: #ffffff;
     display: grid;
-    row-gap:13px;
- 
-        .formLabel {
-            display: block;
-            font-size: 12px;
-            font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.67;
-            letter-spacing: 0.2px;
-            text-align: left;
-            color: #3e3d3f;
-            padding-bottom:3px;
+    row-gap: 13px;
+
+    // labels for the inputs
+    .formLabel {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.67;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: #3e3d3f;
+        padding-bottom: 3px;
+    }
+
+    // slider input group
+    .slidecontainer {
+        margin: 0px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 9.62% 60.77% 10.38% 19.23%;
+        height: 40px;
+        vertical-align: center;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        // min and max range inputs
+        .rangeLabel {
+            padding-top: 12px;
+            padding-right: 16%;
+        }
+        // slider import
+        .rangeSlider {
+            padding: 6px 2.78% 6px 0;
+            @import "slider";
+
+        }
+
+        //input showing the range value
+        .rangeInput {
+            input {
+                width: 100%;
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                border-radius: 4px;
+                border: solid 1px #a6a6a6;
+                background-color: #ffffff;
+            }
         }
 
 
-        .slidecontainer {
-            margin: 0px;
-            width:100%;
-            display: grid;
-            grid-template-columns: 9.62% 60.77% 10.38% 19.23%;
+
+    }
+
+    //invalid handling message for mobile
+    .invalidMessage {
+        margin-top: 2px;
+        font-size: 10px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.2px;
+        height: 10px;
+        color: #da3535;
+        display: none;
+        // when the class is added, show it.
+        // this only happens when the user forgot to set a value for the currency inputs
+        &.displayInvalid {
+            display: block;
+        }
+    }
+
+    // the input 
+    .invalidInput {
+        border-color: #da3535 !important;
+    }
+    // invalid handling message for desktop, hidden always in mobile
+    .invalidDesktopMessage {
+        display: none;
+
+        &.displayInvalid {
+            display: none;
+        }
+
+    }
+
+    // two columns inputs definition
+    .splitedColumns {
+        padding-top: 7px;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 7.69%;
+
+    }
+    // container for the currency inputs 
+    .currencyContainer {
+        border: solid 1px #a6a6a6;
+        border-radius: 4px;
+        padding: 0 5px 0 15px;
+        display: grid;
+        grid-template-columns: 10px 1fr;
+        column-gap: 1px;
+
+        // the input will not display its borders and will be part of the container
+        input {
+            width: 100%;
+            border: 0;
             height: 40px;
-            vertical-align: center;
-            font-size: 14px;
+            padding: 12px 0px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
             line-height: normal;
-            letter-spacing: 0.3px;
-            .rangeLabel {
-                padding-top:12px;
-                padding-right: 16%;
+            padding: 0;
+            letter-spacing: 0.4px;
+            color: #0d0d0d;
+            // hide focus outline
+            &:focus {
+                outline: none;
             }
-
-            .rangeSlider {
-                padding:6px  2.78% 6px 0;
-                @import "slider";
-
-            }
-
-            .rangeInput {
-            
-
-                input {
-                    width: 100%;
-                    padding-top:12px;
-                    padding-bottom:12px;
-                    text-align: center;
-                    border-radius: 4px;
-                    border: solid 1px #a6a6a6;
-                    background-color: #ffffff;
-                }
-            }
-
-
-
+        }
+        // '$' sign before the input
+        &:before {
+            content: '$';
+            padding-top: 12px;
+            font-size: 14px;
         }
 
-        .invalidMessage{
-            margin-top:2px;
-            font-size: 10px;
-            font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: 0.2px;
-            height: 10px;
-            color: #da3535;
-            display : none;
-        }
+    }
 
-        .invalidInput{
-            border-color: #da3535 !important;
-        }
+    // when the container is active, then highligth it
+    .active {
+        border-radius: 4px;
+        box-shadow: 0 0 4px 0 rgba(62, 61, 63, 0.62);
+        border: solid 1px #3e3d3f;
+        background-color: #ffffff;
+    }
 
-        .invalidDesktopMessage{
-            display : none;
-
-        }
-        .displayInvalid{
-            display : block;
-        }
-
-        .splitedColumns{
-            padding-top: 7px;
-            display:grid;
-            width: 100%;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 7.69%;
-
-        }
-
-        .currencyContainer {
-            border: solid 1px #a6a6a6;
-            border-radius: 4px;
-            padding: 0 5px 0 15px;
-        
-            display: grid;
-            grid-template-columns: 10px 1fr;
-            column-gap: 1px;
-            input {
-                width: 100%;
-                border: 0;
-                height: 40px;
-                padding: 12px 0px;
-                font-weight: normal;
-                font-style: normal;
-                font-stretch: normal;
-                line-height: normal;
-                padding:0;
-                letter-spacing: 0.4px;
-                color: #0d0d0d;
-                &:focus{
-                    outline: none;
-                }
-            }
-            &:before{
-                content:'$';
-                padding-top: 12px;
-                font-size: 14px;
-            }
-
-        }
-        .active{
-            border-radius: 4px;
-            box-shadow: 0 0 4px 0 rgba(62, 61, 63, 0.62);
-            border: solid 1px #3e3d3f;
-            background-color: #ffffff;
-        }
-
-
+    // form submit button
     #calculateButton {
         width: 100%;
         height: 40px;
@@ -147,5 +161,97 @@
         letter-spacing: 0.6px;
         text-align: center;
         color: #ffffff;
+    }
+
+
+    // defines the desktop view
+    @media screen and (min-width: $break-small) {
+        margin-top: 0px;
+        display: grid;
+        row-gap: 20px;
+
+        //minor size and display changes
+        .formLabel {
+            display: block;
+            padding: 0px;
+            font-size: 14px;
+            line-height: 1.21;
+        }
+        // minor distribution size changes
+        .slidecontainer {
+            grid-template-columns: 7.44% 68.72% 8.46% 15.38%;
+            height: 45px;
+            .rangeLabel {
+                padding-right: 17.24%;
+                padding-top: 14px;
+                font-size: 16px;
+            }
+            .rangeSlider {
+                padding: 9px 1.87% 9px 0;
+            }
+            .rangeInput {
+                input {
+                    padding-top: 14px;
+                    padding-bottom: 13px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        // minor distribution size changes
+        .splitedColumns {
+            padding-top: 7px;
+            display: grid;
+            column-gap: 5.13%;
+        }
+
+        // defines the desktop message 
+        .invalidDesktopMessage {
+            margin-top: 2px;
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 0.3px;
+            height: 15px;
+            color: #da3535;
+            display: none;
+            //shows when invalid input
+            &.displayInvalid {
+                display: block;
+            }
+        }
+
+        // invalid message for mobile, never showed on desktop 
+        .invalidMessage {
+            display: none;
+            &.displayInvalid {
+                display: none;
+            }
+        }
+        // minor distribution size changes
+        .currencyContainer {
+            padding: 12px 5px 12px 25px;
+            height: 20px;
+            display: grid;
+            margin-top: 5px;
+            grid-template-columns: 10px 1fr;
+            column-gap: 4.5px;
+
+            input {
+                font-size: 16px;
+                padding: 0px;
+                height: 20px;
+
+            }
+
+            &:before {
+                content: '$';
+                padding-top: 0;
+                font-size: 16px;
+            }
+
+        }
     }
 }

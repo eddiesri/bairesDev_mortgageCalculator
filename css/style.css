@@ -22,6 +22,12 @@ body {
   text-align: left;
   color: #006ea0;
 }
+@media screen and (min-width: 760px) {
+  .mainContainer .divTitle .appTitle {
+    font-size: 22px;
+    font-weight: normal;
+  }
+}
 .mainContainer .divTitle .titleHr {
   height: 0.5px;
   margin-top: 10px;
@@ -30,8 +36,8 @@ body {
 }
 .mainContainer .form {
   border-radius: 4px;
-  padding: 15px 20px 20px 20px;
   box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px 20px 20px;
   display: grid;
   row-gap: 5px;
   margin: 0px;
@@ -51,7 +57,6 @@ body {
 }
 .mainContainer .form #formContainer {
   margin-top: 10px;
-  background-color: #ffffff;
   display: grid;
   row-gap: 13px;
 }
@@ -132,14 +137,17 @@ body {
   color: #da3535;
   display: none;
 }
+.mainContainer .form #formContainer .invalidMessage.displayInvalid {
+  display: block;
+}
 .mainContainer .form #formContainer .invalidInput {
   border-color: #da3535 !important;
 }
 .mainContainer .form #formContainer .invalidDesktopMessage {
   display: none;
 }
-.mainContainer .form #formContainer .displayInvalid {
-  display: block;
+.mainContainer .form #formContainer .invalidDesktopMessage.displayInvalid {
+  display: none;
 }
 .mainContainer .form #formContainer .splitedColumns {
   padding-top: 7px;
@@ -196,6 +204,95 @@ body {
   letter-spacing: 0.6px;
   text-align: center;
   color: #ffffff;
+}
+@media screen and (min-width: 760px) {
+  .mainContainer .form #formContainer {
+    margin-top: 0px;
+    display: grid;
+    row-gap: 20px;
+  }
+  .mainContainer .form #formContainer .formLabel {
+    display: block;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 1.21;
+  }
+  .mainContainer .form #formContainer .slidecontainer {
+    grid-template-columns: 7.44% 68.72% 8.46% 15.38%;
+    height: 45px;
+  }
+  .mainContainer .form #formContainer .slidecontainer .rangeLabel {
+    padding-right: 17.24%;
+    padding-top: 14px;
+    font-size: 16px;
+  }
+  .mainContainer .form #formContainer .slidecontainer .rangeSlider {
+    padding: 9px 1.87% 9px 0;
+  }
+  .mainContainer .form #formContainer .slidecontainer .rangeInput input {
+    padding-top: 14px;
+    padding-bottom: 13px;
+    font-size: 16px;
+  }
+  .mainContainer .form #formContainer .splitedColumns {
+    padding-top: 7px;
+    display: grid;
+    column-gap: 5.13%;
+  }
+  .mainContainer .form #formContainer .invalidDesktopMessage {
+    margin-top: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    height: 15px;
+    color: #da3535;
+    display: none;
+  }
+  .mainContainer .form #formContainer .invalidDesktopMessage.displayInvalid {
+    display: block;
+  }
+  .mainContainer .form #formContainer .invalidMessage {
+    display: none;
+  }
+  .mainContainer .form #formContainer .invalidMessage.displayInvalid {
+    display: none;
+  }
+  .mainContainer .form #formContainer .currencyContainer {
+    padding: 12px 5px 12px 25px;
+    height: 20px;
+    display: grid;
+    margin-top: 5px;
+    grid-template-columns: 10px 1fr;
+    column-gap: 4.5px;
+  }
+  .mainContainer .form #formContainer .currencyContainer input {
+    font-size: 16px;
+    padding: 0px;
+    height: 20px;
+  }
+  .mainContainer .form #formContainer .currencyContainer:before {
+    content: "$";
+    padding-top: 0;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 760px) {
+  .mainContainer .form {
+    padding: 34px 40px 40px 40px;
+    display: block;
+  }
+  .mainContainer .form .formTitle {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+  }
+  .mainContainer .form .formLine {
+    margin: 10.5px 0px 35.5px 0px;
+    width: 100%;
+  }
 }
 @keyframes slide-down {
   0% {
@@ -275,20 +372,90 @@ body {
   height: 1px;
   background-color: #cbcbcb;
 }
+.mainContainer #resultsContainer .totalLine {
+  display: block;
+}
 .mainContainer #resultsContainer.hidden {
   display: none;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 760px) {
   .mainContainer #resultsContainer {
-    display: grid;
+    margin: 41px 0;
+    display: block;
+    padding: 13.23% 14.7%;
     animation: none;
   }
+  .mainContainer #resultsContainer .resultsTitle {
+    font-size: 20px;
+    margin-bottom: 29px;
+    padding: 0px;
+  }
+  .mainContainer #resultsContainer .resultDiv {
+    margin-bottom: 20px;
+    display: block;
+  }
+  .mainContainer #resultsContainer .resultDiv .valueLabel {
+    margin: 0px 0px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 2.14;
+    letter-spacing: normal;
+  }
+  .mainContainer #resultsContainer .resultDiv .resultValue {
+    height: 100%;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .mainContainer #resultsContainer .resultDiv .resultValue::before {
+    font-weight: bold;
+  }
+  .mainContainer #resultsContainer .resultDiv .totalLabel {
+    margin: 0px;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+  }
+  .mainContainer #resultsContainer .resultDiv .totalValue {
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: left;
+  }
+  .mainContainer #resultsContainer .resultDiv .totalValue::before {
+    font-size: 22px;
+  }
+  .mainContainer #resultsContainer .resultLine {
+    display: none;
+  }
+  .mainContainer #resultsContainer .totalLine {
+    display: block;
+    margin: 20px 0px;
+  }
+  .mainContainer #resultsContainer.hidden {
+    display: block;
+  }
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 760px) {
+  .mainContainer {
+    margin: 10px 50px 10px 30px;
+    grid-template-rows: 6.5% 87.14%;
+    row-gap: 25px;
+  }
   .mainContainer .divContent {
     display: grid;
-    grid-template-columns: 53.4% 30.91%;
-    padding: 0 8.86% 0 6.81%;
+    height: 522px;
+    grid-template-columns: 63.34% 36.66%;
+    padding: 0 4.63% 0 4.88%;
   }
 }
 

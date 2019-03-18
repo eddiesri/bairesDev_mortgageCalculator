@@ -1,23 +1,28 @@
-
+// container for the main title 
 .divTitle {
-    padding: 13px 10px 20px  10px;
+    padding: 13px 10px 20px 10px;
 
+    // main title
     .appTitle {
         font-size: 20px;
         font-weight: 300;
         font-style: normal;
         font-stretch: normal;
-        
         text-align: left;
         color: #006ea0;
+        // defines the font size for the desktop view
+        @media screen and (min-width: $break-small) {
+            font-size: 22px;
+            font-weight: normal;
+        }
     }
 
+    // line div between the title and the rest of the app 
     .titleHr {
         height: 0.5px;
         margin-top: 10px;
-
         background-color: #cacaca;
         text-align: left;
     }
-    
+
 }

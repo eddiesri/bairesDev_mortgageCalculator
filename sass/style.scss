@@ -1,4 +1,7 @@
-$break-small: 700px;
+// upon this width, the view is considered for desktop
+$break-small: 760px;
+
+// default values for the view
 body{
     
     font-family: Roboto, Helvetica, sans-serif;
@@ -7,22 +10,35 @@ body{
     box-sizing: border-box;
     color: #3e3d3f;
 }
+
+//main div container
 .mainContainer {
     margin: 10px;
-    display: grid;
+    display: grid; 
     padding-bottom: 20px;
-
-    @import "title"; //OK
-    
+    // import main title
+    @import "title"; 
+    //import main form container
     @import "form"; 
-
+    //import main results container
     @import "results";
-   
-        @media screen and (min-width: $break-small) {
-            .divContent {
+
+    // defines the desktop view 
+    @media screen and (min-width: $break-small) {            
+
+        margin: 10px 50px 10px 30px;
+        grid-template-rows: 6.5% 87.14%;
+        row-gap: 25px;
+        // container below the main title
+        .divContent {
             display: grid;
-            grid-template-columns: 53.4% 30.91%;
-            padding: 0 8.86% 0 6.81%;
+            height:522px;
+            grid-template-columns: 63.34% 36.66%; // split the form and results in 2 columns
+            padding: 0 4.63% 0 4.88%;
+           
         }
-    }
+
+    
 }
+}
+

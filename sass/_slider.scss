@@ -1,3 +1,4 @@
+// slider element
 .slider {
   height: 8px;
   -webkit-appearance: none;
@@ -5,15 +6,15 @@
   width: 100%;
   background: linear-gradient(to right, #1091cc 0%, #1091cc 50%, #cacaca 50%, #cacaca 100%);
   border-radius: 6px;
-
+  // on focus
   &:focus {
     outline: none;
   }
-
+  // on hover
   &:hover {
     opacity: 1;
   }
-
+  // slider thumb for chrome
   &::-webkit-slider-thumb {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.27);
     background-color: #ffffff;
@@ -24,4 +25,5 @@
     -webkit-appearance: none;
     
   }
+
 }

@@ -21,9 +21,9 @@ var resultsContainerElement = document.getElementById("resultsContainer");
 function rangeSet(element) {
   // set the range percentage and the changed input
   var percentage = parseInt(element.value * 100 / element.max);
-  var inputElement = element.parentElement.parentElement.querySelector('input[type=number]'); //sets the value
+  var inputElement = element.parentElement.parentElement.querySelector('input[type=number]'); //sets the value, If the element is the interest range, it always will set a float number.
 
-  inputElement.value = element.value; // fills the range background
+  inputElement.value = inputElement.id !== 'interestValue' ? element.value : parseFloat(element.value).toFixed(1); // fills the range background
 
   element.style.background = 'linear-gradient(to right, #1091cc 0%, #1091cc ' + percentage + '%, #cacaca ' + percentage + '%, #cacaca 100%)';
 }
@@ -34,8 +34,11 @@ function rangeSet(element) {
 
 
 function removeInvalid(element) {
-  element.parentElement.classList.remove("invalidInput");
-  element.parentElement.nextElementSibling.classList.remove("displayInvalid");
+  element.parentElement.classList.remove("invalidInput"); // hide error handling message for mobile
+
+  element.parentElement.nextElementSibling.classList.remove("displayInvalid"); // hide error handling message for desktop
+
+  element.parentElement.nextElementSibling.nextElementSibling.classList.remove("displayInvalid");
 }
 
 ;
@@ -45,8 +48,11 @@ function removeInvalid(element) {
  */
 
 function addInvalid(element) {
-  element.parentElement.classList.add("invalidInput");
-  element.parentElement.nextElementSibling.classList.add("displayInvalid");
+  element.parentElement.classList.add("invalidInput"); // show error handling message for mobile
+
+  element.parentElement.nextElementSibling.classList.add("displayInvalid"); // show error handling message for desktop
+
+  element.parentElement.nextElementSibling.nextElementSibling.classList.add("displayInvalid");
 }
 
 ;
@@ -107,6 +113,18 @@ function listenerChangeRequiredClass(element) {
   });
 }
 /**
+ * Finds the active element and removes the 'active' class from it
+ */
+
+
+function removeActiveFromInput() {
+  var pastActive = document.querySelector('.active');
+
+  if (pastActive) {
+    pastActive.classList.remove('active');
+  }
+}
+/**
  * Adds a onClick listener to the '.currencyContainer' element
  * Also: focus the inner input
  * @param {Object} element - The element whose listener will be set
@@ -115,12 +133,7 @@ function listenerChangeRequiredClass(element) {
 
 function listenerClickCurrencyContainerClass(element) {
   element.addEventListener("click", function (e) {
-    var pastActive = document.querySelector('.active');
-
-    if (pastActive) {
-      pastActive.classList.remove('active');
-    }
-
+    removeActiveFromInput();
     element.lastElementChild.focus();
     element.classList.add('active');
   });
@@ -145,7 +158,9 @@ function initialValues() {
   initialValues(); // Adds event listener for a form submit
 
   formContainerElement.addEventListener("submit", function (e) {
-    e.preventDefault(); // checks if the form is valid
+    e.preventDefault(); // removes the class from the active element
+
+    removeActiveFromInput(); // checks if the form is valid
 
     if (validateForm(document.querySelectorAll('.required'))) {
       // Set the values into variables
@@ -168,8 +183,11 @@ function initialValues() {
 
       removeEmptyValueClass(); // show the results for mobile web
 
-      resultsContainerElement.classList.remove("hidden");
-      resultsContainerElement.scrollIntoView();
+      resultsContainerElement.classList.remove("hidden"); //if the browser is a mobile one, then autoscroll to show and focus the results
+
+      if (window.innerWidth <= 700) {
+        resultsContainerElement.scrollIntoView();
+      }
     }
   }); // Add events listeners for every slider input
 

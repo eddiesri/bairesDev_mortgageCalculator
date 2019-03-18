@@ -10,26 +10,31 @@
 
 <body>
     <div class="mainContainer">
+        <!-- MAIN TITLE -->
         <div class="divTitle">
             <label class="appTitle">Mortgage Calculator</h2>
-            <div class="titleHr"></div>
+                <div class="titleHr"></div>
         </div>
+        <!-- MAIN CONTENT -->
         <div class="divContent">
+            <!-- FORM  -->
             <div class="form">
                 <label class="formTitle">Change values to calculate your results</label>
                 <div class="formLine"></div>
+                <!-- FORM CONTAINER -->
                 <form id="formContainer">
+                    <!-- Years of mortgage -->
                     <div class="inputContainer">
                         <label class="formLabel">Years of mortgage</label>
-                        
+
                         <div class="slidecontainer">
 
                             <div class="rangeLabel"><span class="minRange">1</span></div>
                             <div class="rangeSlider"><input type="range" min="1" max="40" value="20" step="1" class="slider"
-                                id="yearsRangeValue"></div>
-                            
-                                    <div class="rangeLabel"><span class="maxRange">40</span></div>
-                            
+                                    id="yearsRangeValue"></div>
+
+                            <div class="rangeLabel"><span class="maxRange">40</span></div>
+
                             <div class="rangeInput"><input type="number" min="1" max="40" value="20" step="1" id="yearsValue"
                                     disabled="true"></div>
 
@@ -37,6 +42,7 @@
 
 
                     </div>
+                    <!-- Rate of interest -->
                     <div class="inputContainer">
                         <label class="formLabel">Rate of interest (%)</label>
 
@@ -54,6 +60,7 @@
 
 
                     </div>
+                    <!-- Loan Amount -->
                     <div class="inputContainer">
                         <label class="formLabel">Loan Amount</label>
                         <div class="currencyContainer">
@@ -62,60 +69,67 @@
                         <label class="invalidMessage">Mandatory Field</label>
                         <label class="invalidDesktopMessage">Loan Amount is mandatory</label>
                     </div>
-                    <div class="">
-<div class="splitedColumns">
-                        <div class="halfColumn">
-                            <label class="formLabel">Annual Tax</label>
+                    <!-- Tax & Insurance -->
+                    <div class="inputContainer">
+                        <div class="splitedColumns">
+                            <!-- Annual Tax -->
+                            <div class="halfColumn">
+                                <label class="formLabel">Annual Tax</label>
 
-                            <div class="currencyContainer ">
-                              <input type="number" min="0" step="1" class="required" id="taxValue">
+                                <div class="currencyContainer ">
+                                    <input type="number" min="0" step="1" class="required" id="taxValue">
+                                </div>
+                                <label class="invalidMessage">Mandatory Field</label>
+                                <label class="invalidDesktopMessage">Annual Tax is mandatory</label>
                             </div>
-                            <label class="invalidMessage">Mandatory Field</label>
-                            <label class="invalidDesktopMessage">Mandatory Field</label>
-                        </div>
-                        <div class="halfColumn">
-                            <div class=""></div>
-                            <div class=""></div>
-                            <label class="formLabel">Annual Insurance</label>
-                            <div class="currencyContainer">
+                            <!-- Annual Insurance -->
+                            <div class="halfColumn">
+                                <div class=""></div>
+                                <div class=""></div>
+                                <label class="formLabel">Annual Insurance</label>
+                                <div class="currencyContainer">
 
-                                 <input type="number" min="0" step="1" class="required" id="insuranceValue">
+                                    <input type="number" min="0" step="1" class="required" id="insuranceValue">
+                                </div>
+                                <label class="invalidMessage">Mandatory Field</label>
+                                <label class="invalidDesktopMessage">Annual Insurance is mandatory</label>
                             </div>
-                            <label class="invalidMessage">Mandatory Field</label>
-                            <label class="invalidDesktopMessage">Loan Amount is mandatory</label>
                         </div>
                     </div>
-                    </div>
+                    <!-- SUBMIT BUTTON -->
                     <div class="calculateContainer">
                         <button type="submit" id="calculateButton">CALCULATE</button>
                     </div>
                 </form>
             </div>
+            <!-- RESULTS CONTAINER -->
             <div id="resultsContainer" class="hidden">
                 <h3 class="resultsTitle">Your Results</h3>
+                <!-- PRINCIPLE AND INTEREST -->
                 <div class="resultDiv">
                     <p class="valueLabel smallLabel">Principle &amp; Interest</p>
                     <p class="resultValue emptyValue" id="principleAndInterestsLabel"> - - </p>
                 </div>
                 <div class="resultLine"></div>
+                <!-- TAX -->
                 <div class="resultDiv">
                     <p class="valueLabel smallLabel">Tax</p>
                     <p class="resultValue emptyValue" id="taxLabel"> - - </p>
                 </div>
                 <div class="resultLine "></div>
+                <!-- INSURANCE -->
                 <div class="resultDiv">
                     <p class="valueLabel smallLabel">Insurance</p>
                     <p class="resultValue emptyValue" id="insuranceLabel"> - - </p>
                 </div>
-                <div class="resultLine"></div>
+                <div class="resultLine totalLine"></div>
+                <!-- TOTAL VALUE -->
                 <div class="resultDiv">
                     <p class="valueLabel totalLabel">Total Monthly Payment</p>
                     <p class="totalValue emptyValue" id="monthlyPaymentLabel"> - -</p>
                 </div>
             </div>
-        </div> 
-
-
+        </div>
     </div>
     <script src="output/formulas.js"></script>
 </body>
